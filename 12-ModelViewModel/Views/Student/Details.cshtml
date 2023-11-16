@@ -1,0 +1,15 @@
+﻿@using _12_ModelViewModel.Models.VMs;
+@model StudentDetailsVM
+
+<h1>Öğrenci Detayları</h1>
+<p>Öğrenci ID: @Model.Student.StudentId</p>
+<p>Adı: @Model.Student.FirstName</p>
+<p>Soyadı: @Model.Student.LastName</p>
+
+<h2>Aldığı Dersler</h2>
+<ul>
+    @foreach (var course in Model.Courses)
+    {
+        <li>@course.CourseName</li>
+    }
+</ul>

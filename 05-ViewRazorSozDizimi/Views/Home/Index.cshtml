@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@*Temel Razor Sözdizimi*@
+<p>Bugün Günlerden: @DateTime.Now.ToString()</p>
+
+@*Explicit (Açık İfadeler) *@
+@{
+    var name = "Fatih Alkan";
+}
+Merhaba, @(name.Substring(0, 4)). Yaş: <b>@(37 + 5).</b>
+
+@*Kod blokları içinde html blokları*@
+@{
+    var merhaba = "Bu bir kod bloğu...";
+
+    <p>Bir html p etiketi ve <b>kalın</b> ifadesi kullanımı...</p>
+    
+    @:Bu düz metin!
+    <br /><br />
+
+}
+
+<!--Yorumlar Tarayıcıda Gözükür-->
+@*Yorumlar Tarayıcıda Gözükmez*@
+@{
+    //C# yorumları geçerli.
+}
+
+@*Değişkenler*@
+@{
+    string helloWorldMsg = "Hello, world!";
+}
+
+<div>
+    @helloWorldMsg
+</div>
+
+
+@*Karar Yapıları*@
+@if (DateTime.Now.Year != 2042)
+{
+    <span>2042 yılına henüz gelmedik!</span>
+}
+
+@*Döngüler*@
+@{
+    List<string> names = new List<string>()
+    {
+        "Fatih Alkan",
+        "Beyazıt Al",
+        "Cem Ak",
+        "Ayşe Gül"
+    };
+}
+
+<ul>
+    @for (int i = 0; i < names.Count; i++)
+    {
+        <li>@names[i]</li>
+    }
+</ul>
+
+<ul>
+    @foreach (string item in names)
+    {
+        <li>@item</li>
+    }
+</ul>

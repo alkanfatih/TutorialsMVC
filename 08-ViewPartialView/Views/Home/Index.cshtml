@@ -1,0 +1,22 @@
+﻿@model List<Product>
+
+<div class="row">
+    <div class="col-3">
+        <div id="menu">
+            @Html.Partial("_Menu")
+        </div>
+        <div id="content">
+            <!-- Diğer içerikler burada yer alır -->
+        </div>
+    </div>
+    <div class="col-9">
+        <h1>Ürün Listesi</h1>
+
+        <div>
+            @foreach (var product in Model)
+            {
+                @Html.Partial("_ProductPartial", product)
+            }
+        </div>
+    </div>
+</div>

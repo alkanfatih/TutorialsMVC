@@ -1,0 +1,12 @@
+﻿@*View code*@
+<h3>@ViewBag.Title</h3>
+<ul>
+    @{
+        foreach (var student in ViewBag.Student)
+        {
+            <li>@student</li>
+        }
+    }
+</ul>
+
+

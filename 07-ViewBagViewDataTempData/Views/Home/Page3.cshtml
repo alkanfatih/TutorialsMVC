@@ -1,0 +1,10 @@
+﻿@*View code*@
+<h3>@TempData["Title"].ToString()</h3>
+<ul>
+    @{
+        foreach (var student in TempData["Student"] as List<string>)
+        {
+            <li>@student</li>
+        }
+    }
+</ul>

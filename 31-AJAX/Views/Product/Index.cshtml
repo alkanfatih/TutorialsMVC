@@ -1,0 +1,28 @@
+﻿@model List<Product>
+
+<h2>Product List</h2>
+
+<ul id="productList">
+    <!-- Ürünler burada dinamik olarak eklenecek -->
+</ul>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // AJAX isteği gönderme
+    $(document).ready(function () {
+        $.ajax({
+            url: '/Product/GetProducts',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                // Başarılı istek durumunda, ürünleri sayfaya ekle
+                $.each(data, function (index, product) {
+                    $('#productList').append('<li>' + product.Name + '</li>');
+                });
+            },
+            error: function () {
+                alert('Bir hata oluştu!');
+            }
+        });
+    });
+</script>

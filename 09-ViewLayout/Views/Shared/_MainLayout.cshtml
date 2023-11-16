@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My Website</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <h1>@ViewBag.Title</h1>
+        <nav>
+            <!-- Menü bağlantıları burada yer alır -->
+        </nav>
+    </header>
+
+    <div id="content">
+        @RenderBody() <!-- Sayfa içeriği burada yer alır -->
+    </div>
+    @*@RenderSection("Footer")*@
+
+    @RenderSection("Footer", required : false)
+
+    @if (!IsSectionDefined("Footer"))
+    {
+        <span>Generic footer message!</span>
+    }
+
+    <footer>
+        &copy; 2023 My Website
+    </footer>
+</body>
+</html>

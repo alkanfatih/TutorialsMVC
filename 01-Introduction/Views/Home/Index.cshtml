@@ -1,0 +1,20 @@
+﻿@model _01_Introduction.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>Product</h1>
+    <h2>Ürün Adı: @Model.Name</h2>
+    <h3>Ürün Kodu: @Model.Id</h3>
+    <hr />
+    <p>Ürün Fiyatı: @Model.Price</p>
+</body>
+</html>
